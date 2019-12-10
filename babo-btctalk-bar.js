@@ -97,38 +97,6 @@ document.querySelectorAll('.new').forEach((elem) => {
 });
 
 
-
-if(window.location.href.indexOf('action=post')>-1) {
-  setTimeout(function(){
-  	$('#extraspace').html(' 📊 [COUNTER] C:0 CwS:0');
-  }, 500);
-  $('textarea[name="message"]').keypress(function() {
-    var string   = $('textarea[name="message"]').val();
-    var prepared = string.replace(/\[quote/g, '▫').replace(/\[\/quote]/g, '▪');
-    var message  = '';
-    var lt       = 0;
-    for (var i in prepared) {
-      var symbol = prepared[i];
-
-      if (lt <= 0 && symbol !== '▫' && symbol !== '▪' && symbol !== '') {
-        message += symbol;
-      } else if (symbol === '▫') {
-        lt++;
-      } else if (symbol === '▪') {
-        lt--;
-      }
-    }
-
-    message = message.replace(/^\s+/g, '');
-    message = message.replace(/\s+$/g, '');
-    message = message.replace(/\s+/g, ' ');
-
-    var lengthWithSpace    = message.length;
-    var lengthWithoutSpace = message.replace(/\s+/g, '').length;
-    $('#extraspace').html(' 📊 [COUNTER] C:'+lengthWithSpace+' CwS:'+lengthWithoutSpace);
-  });
-}
-
 if(window.location.href.indexOf('action=merit')>-1) {
   setTimeout(function(){
     const sent = document.querySelectorAll("#bodyarea > ul:nth-child(5) > li");
