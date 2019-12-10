@@ -11,9 +11,3 @@ greasemonkey utility bar for bitcointalk
 thank you to @TryNinja
 
 ![img](meritpage.png)
-
-## reply characters count in reply page ##
-
-thank you to @DimNik
-
-![img](reply.png)
